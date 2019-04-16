@@ -1,5 +1,5 @@
 #
-# Copyright 2012 The Android Open Source Project
+# Copyright 2018 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
 # limitations under the License.
 #
 
-# Sample: This is where we'd set a backup provider if we had one
-# $(call inherit-product, device/sample/products/backup_overlay.mk)
+# Release name
+#PRODUCT_RELEASE_NAME := hay
 
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/cdma.mk)
-
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-PRODUCT_NAME := omni_hay
+# Inherit language packages
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := hay
+PRODUCT_NAME := omni_hay
 PRODUCT_BRAND := htc
-PRODUCT_MODEL := HTC U11 eyes
-PRODUCT_MANUFACTURER := HTC
+PRODUCT_MODEL := HTC U11 EYEs
+PRODUCT_MANUFACTURER := htc

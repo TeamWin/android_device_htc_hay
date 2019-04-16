@@ -1,5 +1,5 @@
 #
-# Copyright 2016 The Android Open Source Project
+# Copyright 2018 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 # This contains the module build definitions for the hardware-specific
 # components for this device.
 #
@@ -22,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-ifneq ($(filter hay, $(TARGET_DEVICE)),)
+ifneq ($(filter hay,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
